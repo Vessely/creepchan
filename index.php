@@ -1,10 +1,4 @@
-<?php 
-include("class/post_class.php");
-
-
-$post = new Post("22", "3", "3", "", "", "");
-echo $post->post();
-?>
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +13,9 @@ echo $post->post();
 	<div class="container">
 		<div class="navbar"></div>
 		<div class="form-container">
-			<form enctype="multipart/form-data">
+			<form enctype="multipart/form-data" class="post">
 				<input type="text" class="title" placeholder="Titulo">
-				<textarea class="post" placeholder="Post"></textarea>
+				<textarea class="post_c" placeholder="Post"></textarea>
 				<p class="c-input">
 					<span class="icon-image"></span>
 				</p>
@@ -30,7 +24,12 @@ echo $post->post();
 			</form>
 		</div>
 		<div class="spacer"></div>
-		<div class="content"></div>
+		<div class="content">
+		<?php 
+		include_once("controller/show.php");
+		show();
+		 ?>
+		</div>
 	</div>
 	<script src="js/format.js"></script>
 </body>
